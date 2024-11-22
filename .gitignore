@@ -1,0 +1,10 @@
+# IDE
+.idea/
+.code/
+.vs_code/
+
+# subject
+*.subject.pdf
+
+# parameters save file
+/.theta
