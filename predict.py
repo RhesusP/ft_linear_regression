@@ -7,6 +7,9 @@ file.close()
 # Demander à l'utilisateur d'entrer le kilométrage
 mileage = input("Enter the mileage: ")
 mileage = float(mileage)
+if mileage < 0:
+    print("The mileage cannot be negative")
+    exit()
 
 # f(x) = a * x + b
 predicted_price = (a * mileage) + b
