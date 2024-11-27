@@ -1,10 +1,10 @@
-# Chargement des paramètres theta depuis le fichier
+# Load thetas from .theta file
 file = open(".theta", "r")
 a = float(file.readline())  # theta_1
 b = float(file.readline())  # theta_0
 file.close()
 
-# Demander à l'utilisateur d'entrer le kilométrage
+# Mileage input
 mileage = input("Enter the mileage: ")
 mileage = float(mileage)
 if mileage < 0:
@@ -14,5 +14,4 @@ if mileage < 0:
 # f(x) = a * x + b
 predicted_price = (a * mileage) + b
 
-# Affichage du prix prédit
 print(f"The predicted price for {mileage} km is: {predicted_price}")
