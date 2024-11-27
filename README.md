@@ -6,6 +6,24 @@
 
 </div>
 
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [The theory](#the-theory)
+  - [The dataset](#the-dataset)
+  - [The model](#the-model)
+  - [The cost function](#the-cost-function)
+  - [Minimizing the cost function (Gradient Descent)](#minimizing-the-cost-function-gradient-descent)
+    - [The Gradient Descent algorithm](#the-gradient-descent-algorithm)
+    - [Learning rate](#learning-rate)
+    - [Calculate a gradient](#calculate-a-gradient)
+- [The practical part](#the-practical-part)
+  - [The dataset](#the-dataset-1)
+  - [The model (F)](#the-model-f)
+  - [The cost function (J)](#the-cost-function-j)
+  - [The gradient](#the-gradient)
+  - [The Gradient Descent algorithm](#the-gradient-descent-algorithm-1)
+
 ## Requirements
 
 - [numpy](https://numpy.org/install/)
