@@ -93,13 +93,17 @@ x = np.empty((0, 1))
 y = np.empty((0, 1))
 
 # Read the dataset
-with open(file_path, "r") as file:
-    csvreader = csv.reader(file)
-    i = 0
-    for idx_row, row in enumerate(csvreader):
-        if idx_row > 0:
-            x = np.vstack([x, [int(row[0])]])
-            y = np.vstack([y, [int(row[1])]])
+try:
+    with open(file_path, "r") as file:
+        csvreader = csv.reader(file)
+        i = 0
+        for idx_row, row in enumerate(csvreader):
+            if idx_row > 0:
+                x = np.vstack([x, [int(row[0])]])
+                y = np.vstack([y, [int(row[1])]])
+except Exception as e:
+    print("Error: Unable to read the dataset (", e, ")")
+    exit(1)
 
 x_copy = x
 y_copy = y
@@ -137,12 +141,15 @@ predictions = f_model(X, theta_final)
 prediction_line[0].set_ydata(predictions)
 plt.pause(0.005)
 
-file = open(".theta", "w")
-# Remove the standardization before saving thetas
-theta_final[1] = theta_final[1] - theta_final[0] * x_min / (x_max - x_min)
-theta_final[0] = theta_final[0] / (x_max - x_min)
-file.write(str(theta_final[0][0]) + "\n" + str(theta_final[1][0]))
-file.close()
+try:
+    file = open(".theta", "w")
+    # Remove the standardization before saving thetas
+    theta_final[1] = theta_final[1] - theta_final[0] * x_min / (x_max - x_min)
+    theta_final[0] = theta_final[0] / (x_max - x_min)
+    file.write(str(theta_final[0][0]) + "\n" + str(theta_final[1][0]))
+    file.close()
+except Exception as e:
+    print("Error: Unable to save thetas (", e, ")")
 
 plt.ioff()
 plt.show()
