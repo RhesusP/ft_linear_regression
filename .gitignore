@@ -7,4 +7,4 @@
 *.subject.pdf
 
 # parameters save file
-/.theta
+.theta
