@@ -5,8 +5,12 @@ def main():
     except Exception as e:
         print("Error: Unable to read thetas (", e, ")")
         exit(1)
-    a = float(file.readline())  # theta_1
-    b = float(file.readline())  # theta_0
+    try:
+        a = float(file.readline())  # theta_1
+        b = float(file.readline())  # theta_0
+    except Exception as e:
+        print("Error: Thetas are not valid (", e, ")")
+        exit(1)
     file.close()
 
     # Mileage input
